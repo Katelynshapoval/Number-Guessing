@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Random random = new Random();
         Scanner sc = new Scanner(System.in);
+        int attempts = 0;
         int randomNumber = random.nextInt(10) + 1;
         System.out.println("Guess a number from 1 to 10: ");
         int guess = sc.nextInt();
@@ -17,8 +18,10 @@ public class Main {
                 System.out.println("Try greater. ");
                 guess = sc.nextInt();
             }
+            attempts++;
         }
         sc.close();
         System.out.println("You guessed: " + guess);
+        System.out.println("You attempted " + attempts + " times.");
     }
 }
